@@ -19,16 +19,16 @@ export default {
 	*{
 		margin: 0;
 		padding: 0;
+		box-sizing: border-box;
 	}
 	#app {
 		width: 100vw;
 		height: 100vh;
 	}
 	.fade-enter-active, .fade-leave-active {
-	  transition: all 1s;
-	  /* transition: opacity 1s; */
+	  transition: all .3s;
 	}
-	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	.fade-enter, .fade-leave-to {
 	  margin-right: 100vw;
 	  opacity: 0;
 	}

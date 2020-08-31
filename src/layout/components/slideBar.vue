@@ -1,8 +1,8 @@
 <template>
 	<div class="slideBar">
-		<div v-if="settings.logo.isShow" class="logoBox" style="height: 60px;">
+		<div v-if="settings.logo.isShow" class="logoBox">
 			<el-image :src="settings.logo.image" class="logoImg"></el-image>
-			<text>{{settings.logo.title}}</text>
+			<div class="leftTitles">{{settings.logo.title}}</div>
 		</div>
 		<el-scrollbar wrap-class="scrollbar-wrapper" :class="settings.logo.isShow?'islogos':'noislogos'">
 			<el-menu 
@@ -78,16 +78,23 @@
 }
 .logoBox{
 	height: 60px;
-	position: relative;
+	width: 100%;
+	overflow: hidden;
 	padding: 0 20px;
 	background: #2B2F3A;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+	color: #FFFFFF;
+	line-height: 60px;
+	font-weight: 600;
+	font-family: "楷体";
+	font-size: 16px;
 }
 .logoImg{
 	width: 30px;
 	height: 30px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
+	margin-top: 15px;
 }
 .slideBar>>>.el-scrollbar__wrap{
 	overflow: hidden;
