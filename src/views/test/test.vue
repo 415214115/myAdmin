@@ -1,0 +1,11 @@
+<template>
+	<div class="content">
+		222222222222
+	</div>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>

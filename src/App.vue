@@ -1,0 +1,38 @@
+<template>
+	<div id="app">
+		<router-view v-wechat-title="$route.meta.title"></router-view>
+	</div>
+</template>
+
+<script>
+export default {
+	data() {
+		return {};
+	},
+	mounted() {
+		// document.getElementsByTagName('title')[0].innerHTML = this.$route.meta.title;
+	}
+};
+</script>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#app {
+		width: 100vw;
+		height: 100vh;
+	}
+	.fade-enter-active, .fade-leave-active {
+	  transition: all 1s;
+	  /* transition: opacity 1s; */
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	  margin-right: 100vw;
+	  opacity: 0;
+	}
+	.content{
+		background-color: #ffffff;
+	}
+</style>
