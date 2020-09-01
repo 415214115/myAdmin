@@ -8,8 +8,8 @@
 			<el-menu 
 				:default-active="$route.path" 
 				class="el-menu-vertical-demo" 
-				background-color="#304156" 
 				text-color="#fff" 
+				background-color="#304156"
 				:router="true"
 			>
 				<div v-for="item in navSliderBar" :key="item.name">
@@ -102,5 +102,12 @@
 .slideBar>>>.scrollbar-wrapper{
 	margin-right: -2px !important;
 	border-right: 1px solid #304156;
+}
+
+.slideBar>>>.el-menu i{
+	color: #ffffff;
+}
+.el-menu{
+	background: #42B983;
 }
 </style>

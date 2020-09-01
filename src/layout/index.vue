@@ -5,10 +5,9 @@
 			<el-container>
 				<el-header v-if="settings.headerIsShow">Header</el-header>
 				<el-main>
-					<transition name="fade" mode="out-in">
-						<mainPage></mainPage>
-					</transition>
-					<!-- <router-view></router-view> -->
+					<el-card>
+						<transition name="fade" mode="out-in"><mainPage></mainPage></transition>
+					</el-card>
 				</el-main>
 			</el-container>
 		</el-container>
@@ -16,10 +15,10 @@
 </template>
 
 <script>
-import sliderBar from './components/slideBar.vue'
-import mainPage from '../views/layout.vue'
+import sliderBar from './components/slideBar.vue';
+import mainPage from '../views/layout.vue';
 export default {
-	components:{
+	components: {
 		sliderBar,
 		mainPage
 	},
@@ -29,7 +28,6 @@ export default {
 		};
 	},
 	mounted() {
-		
 		console.log(this.settings.headerIsShow);
 		// console.log(this.$router.options.routes);
 		// console.log(this.$route);
@@ -38,19 +36,20 @@ export default {
 </script>
 
 <style scoped="scoped">
-	.content,.el-container{
-		height: 100%;
-	}
-.el-header{
-	/* background-color: #b3c0d1; */
+.content,
+.el-container {
+	height: 100%;
+}
+.el-header {
+	background-color: #b3c0d1;
 	color: #333;
 	text-align: center;
 	line-height: 60px;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .el-aside {
-	background-color: #304156;
+	/* background-color: #304156; */
 	color: #333;
 	text-align: center;
 	line-height: 200px;
@@ -61,5 +60,8 @@ export default {
 	color: #333;
 	text-align: center;
 	line-height: 160px;
+}
+.el-card__body {
+	height: 100vh;
 }
 </style>

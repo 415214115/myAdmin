@@ -26,13 +26,10 @@ export default {
 		height: 100vh;
 	}
 	.fade-enter-active, .fade-leave-active {
-	  transition: all .3s;
+	  transition: all 1s;
 	}
 	.fade-enter, .fade-leave-to {
-	  margin-right: 100vw;
+	  /* margin-right: 100vw; */
 	  opacity: 0;
-	}
-	.content{
-		background-color: #ffffff;
 	}
 </style>
