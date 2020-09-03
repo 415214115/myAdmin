@@ -23,7 +23,7 @@
 								<el-submenu :index="list.path">
 									<template slot="title">
 										<i :class="list.meta.icon"></i>
-										<span>{{ list.meta.title }}1</span>
+										<span>{{ list.meta.title }}</span>
 									</template>
 									<el-menu-item v-for="listItem in list.children" :key="listItem.name" v-show="!listItem.hidden" :index="`${listItem.path}`">
 										<i :class="listItem.meta.icon"></i>{{ listItem.meta.title }}

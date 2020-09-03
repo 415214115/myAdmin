@@ -11,6 +11,9 @@ export default {
 	},
 	mounted() {
 		// document.getElementsByTagName('title')[0].innerHTML = this.$route.meta.title;
+		this.$request.get('aaa/bbb').then( res => {
+			console.log(res)
+		})
 	}
 };
 </script>

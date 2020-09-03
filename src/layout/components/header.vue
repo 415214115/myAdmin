@@ -1,6 +1,8 @@
 <template>
 	<div class="headers">
-		11111
+		<span>欢迎，admin</span>
+		<span>上次登陆：2020-9-3 22:10:13</span>
+		<span>【退出登录】</span>
 	</div>
 </template>
 
@@ -13,7 +15,14 @@
 <style scoped="scoped">
 	.headers{
 		color: #333;
-		text-align: center;
+		text-align: right;
 		line-height: 60px;
+	}
+	.headers span{
+		margin-left: 20px;
+		cursor: pointer;
+	}
+	.headers span:hover{
+		color: #42B983;
 	}
 </style>

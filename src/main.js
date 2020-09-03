@@ -4,10 +4,15 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import request from './request/http.js'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+
+Vue.prototype.$request = request
+
+
 import VueWechatTitle from "vue-wechat-title"
 import './plugins/element.js'
 Vue.use(VueWechatTitle)

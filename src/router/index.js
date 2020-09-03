@@ -26,37 +26,20 @@ export const routes = [{
 		component: () => import('../views/About.vue')
 	},
 	{
+		path: '/login',
+		name: 'login',
+		meta: {
+			title: '登录',
+			icon: 'el-icon-location'
+		},
+			component: () => import('../views/login/index.vue')
+		},
+	{
 		path: '/',
 		name: 'layout',
 		component: () => import('../layout/index.vue'),
-		// redirect: '/test',
+		redirect: '/login',
 		children: [
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
-			classifyRouter,
 			{
 				path: 'test',
 				name: 'test',
