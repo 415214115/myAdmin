@@ -3,7 +3,9 @@
 		<el-container>
 			<el-aside width="210px" height="100%"><sliderBar /></el-aside>
 			<el-container>
-				<el-header v-if="settings.headerIsShow">Header</el-header>
+				<el-header v-if="settings.headerIsShow">
+					<headers></headers>
+				</el-header>
 				<el-main>
 					<el-card>
 						<transition name="fade" mode="out-in"><mainPage></mainPage></transition>
@@ -17,10 +19,12 @@
 <script>
 import sliderBar from './components/slideBar.vue';
 import mainPage from '../views/layout.vue';
+import headers from './components/header.vue';
 export default {
 	components: {
 		sliderBar,
-		mainPage
+		mainPage,
+		headers
 	},
 	data() {
 		return {
@@ -41,11 +45,8 @@ export default {
 	height: 100%;
 }
 .el-header {
-	background-color: #b3c0d1;
-	color: #333;
-	text-align: center;
-	line-height: 60px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .el-aside {
