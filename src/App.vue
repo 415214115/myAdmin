@@ -14,6 +14,7 @@ export default {
 		this.$request.get('aaa/bbb').then( res => {
 			console.log(res)
 		})
+		
 	}
 };
 </script>
@@ -27,6 +28,7 @@ export default {
 	#app {
 		width: 100vw;
 		height: 100vh;
+		font-size: 14px;
 	}
 	.fade-enter-active, .fade-leave-active {
 	  transition: all 1s;

@@ -5,7 +5,7 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import request from './utils/http.js'
-
+import './nprogress' // permission control
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);

@@ -32,7 +32,12 @@ export default {
 		};
 	},
 	mounted() {
-		console.log(this.settings.headerIsShow);
+		// console.log(this.settings.headerIsShow);
+		if(!sessionStorage.getItem('token')){
+			this.$router.replace('/login')
+		} else {
+			console.log(sessionStorage.getItem('token'))
+		}
 		// console.log(this.$router.options.routes);
 		// console.log(this.$route);
 	}

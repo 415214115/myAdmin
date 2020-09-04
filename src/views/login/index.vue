@@ -18,7 +18,7 @@
 				<el-input ref="password" v-model="loginForm.password" placeholder="Password" name="password" :type="pwdIsShow?'password':'text'" tabindex="1"
 				 autocomplete="on" :validate-event="false" >
 				 <i slot="prefix" class="el-icon-lock"></i>
-				 <i slot="suffix" class="el-icon-view" @click="pwdIsShow = !pwdIsShow"></i>
+				 <!-- <i slot="suffix" class="el-icon-view" @click="pwdIsShow = !pwdIsShow"></i> -->
 				 </el-input>
 			</el-form-item>
 			<el-button type="primary" class="loginBtn" :loading="isLoding" @click="loginApp('loginForm')">Login</el-button>
@@ -47,8 +47,8 @@
 			}
 			return {
 				loginForm: {
-					username: '',
-					password: ''
+					username: 'admin',
+					password: '123456'
 				},
 				loginRules: {
 					username: [{
@@ -78,7 +78,8 @@
 				this.isLoding = true
 				this.$refs[formName].validate((valid)=>{
 					if (valid) {
-						this.$router.push('/test/index/home')
+						sessionStorage.setItem('token','test')
+						this.$router.replace('/index')
 					} else{
 						this.$message.error('请仔细核对所填信息')
 					}
@@ -103,8 +104,8 @@
 		left: 50%;
 		margin-left: -200px;
 		height: 220px;
-		top: 50%;
-		margin-top: -110px;
+		/* top: 50%; */
+		margin-top: 220px;
 	}
 	.title-container{
 		margin-bottom: 30px;
