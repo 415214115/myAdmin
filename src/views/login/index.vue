@@ -7,16 +7,21 @@
 			</div>
 
 			<el-form-item prop="username">
-				<i class="el-icon-user"></i>
+				<!-- <i class="el-icon-user"></i> -->
 				<el-input ref="username" v-model="loginForm.username" placeholder="Username" name="username" type="text" tabindex="1"
-				 autocomplete="on" />
+				 autocomplete="on" :validate-event="false">
+				 <i slot="prefix" class="el-icon-user"></i>
+				 </el-input>
 			</el-form-item>
 			<el-form-item prop="password">
-				<i class="el-icon-lock"></i>
-				<el-input ref="password" v-model="loginForm.password" placeholder="Password" name="password" type="password" tabindex="1"
-				 autocomplete="on" />
+				<!-- <i class="el-icon-lock"></i> -->
+				<el-input ref="password" v-model="loginForm.password" placeholder="Password" name="password" :type="pwdIsShow?'password':'text'" tabindex="1"
+				 autocomplete="on" :validate-event="false" >
+				 <i slot="prefix" class="el-icon-lock"></i>
+				 <i slot="suffix" class="el-icon-view" @click="pwdIsShow = !pwdIsShow"></i>
+				 </el-input>
 			</el-form-item>
-			<el-button type="primary" class="loginBtn" @click="loginApp()">Login</el-button>
+			<el-button type="primary" class="loginBtn" :loading="isLoding" @click="loginApp('loginForm')">Login</el-button>
 
 		</el-form>
 	</div>
@@ -48,15 +53,15 @@
 				loginRules: {
 					username: [{
 						required: true,
-						trigger: 'blur',
 						validator: validateUsername
 					}],
 					password: [{
 						required: true,
-						trigger: 'blur',
 						validator: validatePassword
 					}]
-				}
+				},
+				isLoding: false,
+				pwdIsShow:true
 			}
 		},
 		created() {
@@ -69,8 +74,16 @@
 			// window.removeEventListener('storage', this.afterQRScan)
 		},
 		methods: {
-			loginApp(){
-				this.$router.push('/test/index/home')
+			loginApp(formName){
+				this.isLoding = true
+				this.$refs[formName].validate((valid)=>{
+					if (valid) {
+						this.$router.push('/test/index/home')
+					} else{
+						this.$message.error('请仔细核对所填信息')
+					}
+				})
+				this.isLoding = false
 			}
 		}
 	}
@@ -99,15 +112,31 @@
 	.loginBtn{
 		width: 100%;
 	}
+	.login-container>>>.el-input__inner{
+		background-color: #2B3540;
+		border-color: #304156;
+		padding-left: 40px;
+		color: #FFFFFF;
+	}
+	.login-container>>>.el-input__inner::-webkit-input-placeholder{
+		color: #545C70;
+	}
 	.login-container>>>.el-form-item__content{
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: nowrap;
 	}
 	.login-container>>>.el-form-item__content i{
-		color: #FFFFFF;
-		margin-top: 8px;
+		color: #545C70;
+		margin-top: 10px;
 		margin-right: 20px;
-		font-size: 24px;
+		font-size: 20px;
 	}
+	.login-container>>>.el-input__inner:-webkit-autofill,
+	 .login-container>>>.el-input__inner:-webkit-autofill:hover,
+	 .login-container>>>.el-input__inner:-webkit-autofill:focus,
+	 .login-container>>>.el-input__inner:-webkit-autofill:active {
+		-webkit-transition-delay: 99999s;
+		-webkit-transition:  color 99999s ease-out,background-color 99999s ease-out;
+	} 
 </style>
