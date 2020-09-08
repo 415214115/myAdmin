@@ -52,6 +52,7 @@ export default {
 .el-header {
 	box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.3);
 	border-bottom: 1px solid rgba(0,0,0,0.1);
+	height: 50px !important;
 }
 
 .el-aside {

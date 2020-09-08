@@ -68,7 +68,7 @@
 
 <style scoped="scoped">
 .islogos {
-	height: calc(100% - 60px);
+	height: calc(100% - 50px);
 }
 .noislogos{
 	height: 100%;
@@ -80,7 +80,7 @@
 	text-align: initial;
 }
 .logoBox{
-	height: 60px;
+	height: 50px;
 	width: 100%;
 	overflow: hidden;
 	padding: 0 20px;
@@ -89,7 +89,7 @@
 	justify-content: space-around;
 	flex-wrap: nowrap;
 	color: #FFFFFF;
-	line-height: 60px;
+	line-height: 50px;
 	font-weight: 600;
 	font-family: "楷体";
 	font-size: 16px;
@@ -97,7 +97,7 @@
 .logoImg{
 	width: 30px;
 	height: 30px;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 .slideBar>>>.el-scrollbar__wrap{
 	overflow: auto;
@@ -121,7 +121,7 @@
 .el-submenu>>>.el-menu-item:hover,
 .el-menu-vertical-demo>>>.el-menu-item:focus, 
 .el-menu-vertical-demo>>>.el-menu-item:hover{
-	background-color: #545C70;
+	background-color: #263445;
 }
 .el-submenu>>>.el-menu-item:focus{
 	background-color: #2B2F3A;

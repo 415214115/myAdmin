@@ -11,8 +11,7 @@ export default {
 		return {};
 	},
 	mounted() {
-		console.log(this.$store.state.aside)
-		console.log(this.$router.options.routes)
+		
 	}
 };
 </script>

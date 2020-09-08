@@ -16,7 +16,7 @@
 	.headers{
 		color: #333;
 		text-align: right;
-		line-height: 60px;
+		line-height: 50px;
 	}
 	.headers span{
 		margin-left: 20px;
