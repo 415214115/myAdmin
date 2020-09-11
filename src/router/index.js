@@ -6,10 +6,14 @@ import Layout from '../views/layout'
 import reconsitution from './reconsitution.js'
 Vue.use(VueRouter)
 
+// import module
+import {homePage} from './module/home.js' // 首页
+
+
 const classifyRouter = {
 	path: "hahahaha",
 	name: "defaultPage2",
-	component: () => import("../views/test/test.vue"),
+	component: () => import("@/views/test/test.vue"),
 	meta: {
 		title: '专享福利3453465456',
 		icon: 'el-icon-location'
@@ -23,7 +27,7 @@ export const routes = [{
 			title: '首页1',
 			icon: 'el-icon-location'
 		},
-		component: () => import('../views/About.vue')
+		component: () => import('@/views/About.vue')
 	},
 	{
 		path: '/login',
@@ -32,14 +36,15 @@ export const routes = [{
 			title: '登录',
 			icon: 'el-icon-location'
 		},
-			component: () => import('../views/login/index.vue')
+			component: () => import('@/views/login/index.vue')
 		},
 	{
 		path: '/',
 		name: 'layout',
-		component: () => import('../layout/index.vue'),
-		redirect: '/login',
+		component: () => import('@/layout/index.vue'),
+		redirect: '/index',
 		children: [
+			homePage,
 			{
 				path: 'test',
 				name: 'test',
@@ -61,7 +66,7 @@ export const routes = [{
 						children: [{
 								path: "indexall",
 								name: "defaultPage123",
-								component: () => import("../views/test/index.vue"),
+								component: () => import("@/views/test/index.vue"),
 								hidden: true,
 								meta: {
 									title: '专享福利333333',
@@ -71,7 +76,7 @@ export const routes = [{
 							{
 								path: "home",
 								name: "home",
-								component: () => import("../views/Home.vue"),
+								component: () => import("@/views/Home.vue"),
 								meta: {
 									title: 'home11111',
 									icon: 'el-icon-location'
@@ -82,7 +87,7 @@ export const routes = [{
 					{
 						path: "hahahaha",
 						name: "defaultPage1",
-						component: () => import("../views/test/test.vue"),
+						component: () => import("@/views/test/test.vue"),
 						meta: {
 							title: '专享福利',
 							icon: 'el-icon-location'

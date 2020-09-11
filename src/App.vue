@@ -11,9 +11,10 @@ export default {
 	},
 	mounted() {
 		// document.getElementsByTagName('title')[0].innerHTML = this.$route.meta.title;
-		this.$request.get('aaa/bbb').then( res => {
+		this.$request.post('/tcyl-shop-server/shopInfo/wx/index').then( res => {
 			console.log(res)
 		})
+		
 	}
 };
 </script>
@@ -27,6 +28,7 @@ export default {
 	#app {
 		width: 100vw;
 		height: 100vh;
+		font-size: 14px;
 	}
 	.fade-enter-active, .fade-leave-active {
 	  transition: all 1s;

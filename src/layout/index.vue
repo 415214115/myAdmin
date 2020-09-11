@@ -32,7 +32,12 @@ export default {
 		};
 	},
 	mounted() {
-		console.log(this.settings.headerIsShow);
+		// console.log(this.settings.headerIsShow);
+		if(!sessionStorage.getItem('token')){
+			this.$router.replace('/login')
+		} else {
+			console.log(sessionStorage.getItem('token'))
+		}
 		// console.log(this.$router.options.routes);
 		// console.log(this.$route);
 	}
@@ -47,6 +52,7 @@ export default {
 .el-header {
 	box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.3);
 	border-bottom: 1px solid rgba(0,0,0,0.1);
+	height: 50px !important;
 }
 
 .el-aside {
