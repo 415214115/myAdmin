@@ -1,5 +1,5 @@
 import {http} from './http.js'
-export const request = {
+const request = {
 	// get请求
 	get:(url, data = {}) => HTTP({
 	  url:url,
@@ -39,6 +39,7 @@ export const request = {
 	  responseType: 'blob'
 	})
 }
+export default request
 /**
  * get请求文件下载实例
  */
