@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import request from './utils/http.js'
+import request from './utils/request.js'
 import './nprogress' // permission control
 Vue.config.productionTip = false
 
@@ -14,7 +14,7 @@ Vue.prototype.$request = request
 
 
 import VueWechatTitle from "vue-wechat-title"
-import './plugins/element.js'
+// import './plugins/element.js'
 Vue.use(VueWechatTitle)
 new Vue({
 	router,
